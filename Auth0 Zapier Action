@@ -1,0 +1,21 @@
+exports.onExecutePostUserRegistration = async (event) => {
+//const _ = require('lodash');
+const request = require('request');
+
+const payload_to_zap = event.user.email;
+
+var obj = {
+  email: event.user.email,  
+};
+
+  request.post({
+    url: event.secrets.ZAP_WEBHOOK,
+    json: obj   
+  });   
+
+   console.log("Prospect Saved Action in Beta:", obj);
+   
+  // don’t wait for the Zapier WebHook call to finish, return right away (the request will continue on the sandbox)`
+  //callback(null, user, context); 
+  return; // Needed?
+};

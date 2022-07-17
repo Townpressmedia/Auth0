@@ -13,7 +13,7 @@ var obj = {
     json: obj   
   });   
 
-   console.log("Prospect Saved Action in Beta:", obj);
+   console.log("Prospect Saved :", obj);
    
   // don’t wait for the Zapier WebHook call to finish, return right away (the request will continue on the sandbox)`
   //callback(null, user, context); 
